@@ -28,6 +28,7 @@ try {
   // Listen for messages
   socket.addEventListener('message', async ({ data }) => {
     handleMessage(JSON.parse(data))
+    console.warn(JSON.parse(data))
   })
 
   // ping server
@@ -37,6 +38,7 @@ try {
     console.log('[vite] server connection lost. polling for restart...')
     await waitForSuccessfulPing()
     location.reload()
+    console.warn("addEventListener")
   })
 }
 catch (error) {
