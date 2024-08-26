@@ -38,7 +38,7 @@ try {
     console.log('[vite] server connection lost. polling for restart...')
     await waitForSuccessfulPing()
     location.reload()
-    console.warn("addEventListener")
+    console.warn('addEventListener')
   })
 }
 catch (error) {
