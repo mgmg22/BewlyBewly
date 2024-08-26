@@ -59,12 +59,14 @@ function warnFailedFetch(err: Error, path: string | string[]) {
 function cleanUrl(pathname: string): string {
   const url = new URL(pathname, location.toString())
   url.searchParams.delete('direct')
+  console.warn('cleanUrl')
   return url.pathname + url.search
 }
 
 let isFirstUpdate = true
 
 async function handleMessage(payload: HMRPayload) {
+  console.warn('handleMessage')
   switch (payload.type) {
     case 'connected':
       console.debug('[vite] connected.')
