@@ -139,30 +139,25 @@ async function initData() {
   console.warn('sxs await getData() videoList')
   console.warn(videoList)
   videoList.value.forEach((video) => {
-    console.warn('sxs item')
-    console.warn(video)
+    console.warn(video.item.title)
   })
 }
 
 async function getData() {
-  console.warn('sxs getData beforeLoading')
   emit('beforeLoading')
   isLoading.value = true
   try {
     if (settings.value.recommendationMode === 'web') {
       await getRecommendVideos()
-      console.warn('sxs getRecommendVideos')
     }
     else {
       for (let i = 0; i < 3; i++)
         await getAppRecommendVideos()
-      console.warn('sxs getAppRecommendVideos')
     }
   }
   finally {
     isLoading.value = false
     emit('afterLoading')
-    console.warn('sxs getData finally')
   }
 }
 
