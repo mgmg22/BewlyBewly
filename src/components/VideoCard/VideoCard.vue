@@ -126,7 +126,7 @@ function getCurrentTime() {
 watch(() => isHover.value, (newValue) => {
   if (!props.video || !newValue)
     return
-
+    console.warn(props.video)
   if (props.showPreview && settings.value.enableVideoPreview
     && !previewVideoUrl.value && props.video.cid) {
     api.video.getVideoPreview({
