@@ -128,7 +128,7 @@ watch(() => isHover.value, (newValue) => {
     return
   if (props.showPreview && settings.value.enableVideoPreview
     && !previewVideoUrl.value && props.video.cid) {
-      console.warn(props.video)
+    console.warn(props.video)
     api.video.getVideoPreview({
       bvid: props.video.bvid,
       cid: props.video.cid,
