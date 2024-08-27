@@ -137,9 +137,15 @@ async function initData() {
   appVideoList.value.length = 0
   await getData()
   console.warn('sxs await getData() videoList')
-  console.warn(videoList)
   videoList.value.forEach((video) => {
     console.warn(video?.item?.title)
+  })
+  videoList.value = videoList.value.filter(video => {
+  const title = video?.item?.title;
+  // 使用正则表达式检查title是否包含"哈哈哈"、"今天"或"ghb"
+  // 这里使用了'i'标志来忽略大小写
+  const pattern = /年|今天|2024/i;
+    return !pattern.test(title);
   })
 }
 
