@@ -38,7 +38,7 @@ try {
     console.log('[vite] server connection lost. polling for restart...')
     await waitForSuccessfulPing()
     location.reload()
-    console.warn('addEventListener')
+    console.warn('sxs addEventListener')
   })
 }
 catch (error) {
@@ -59,14 +59,14 @@ function warnFailedFetch(err: Error, path: string | string[]) {
 function cleanUrl(pathname: string): string {
   const url = new URL(pathname, location.toString())
   url.searchParams.delete('direct')
-  console.warn('cleanUrl')
+  console.warn('sxs cleanUrl')
   return url.pathname + url.search
 }
 
 let isFirstUpdate = true
 
 async function handleMessage(payload: HMRPayload) {
-  console.warn('handleMessage')
+  console.warn('sxs handleMessage')
   switch (payload.type) {
     case 'connected':
       console.debug('[vite] connected.')

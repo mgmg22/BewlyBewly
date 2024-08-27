@@ -139,6 +139,7 @@ async function initData() {
 }
 
 async function getData() {
+  console.warn('sxs getData beforeLoading')
   emit('beforeLoading')
   isLoading.value = true
   try {
@@ -153,6 +154,8 @@ async function getData() {
   finally {
     isLoading.value = false
     emit('afterLoading')
+    console.warn('sxs getData finally')
+    console.warn(appVideoList)
   }
 }
 
