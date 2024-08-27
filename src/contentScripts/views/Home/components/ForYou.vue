@@ -139,7 +139,7 @@ async function initData() {
   console.warn('sxs await getData() videoList')
   console.warn(videoList)
   videoList.value.forEach((video) => {
-    console.warn(video.item.title)
+    console.warn(video?.item?.title)
   })
 }
 
