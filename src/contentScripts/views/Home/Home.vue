@@ -39,7 +39,6 @@ const gridLayoutIcons = computed((): GridLayoutIcon[] => {
 
 // use Json stringify to watch the changes of the array item properties
 watch(() => JSON.stringify(settings.value.homePageTabVisibilityList), () => {
-  console.warn('sxs watch Home')
   currentTabs.value = computeTabs()
 })
 

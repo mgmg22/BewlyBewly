@@ -136,14 +136,13 @@ async function initData() {
   videoList.value.length = 0
   appVideoList.value.length = 0
   await getData()
-  console.warn('sxs await getData() videoList')
   videoList.value.forEach((video) => {
-    console.warn(video?.item?.title)
+    console.warn(video?.item)
   })
   videoList.value = videoList.value.filter((video) => {
     const title = video?.item?.title ?? ''
-    const pattern = /年|今天|RCE/i
-    return !pattern.test(title)
+    const blackPattern = /到底是|男朋友|奥运|董宇辉|张雪峰|韩国|豆瓣|舔狗|名场面|关于我是|学姐|英国|氪金|张雪峰|陈泽|丁真|Gai/i
+    return !blackPattern.test(title)
   })
 }
 
