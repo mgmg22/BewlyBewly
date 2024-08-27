@@ -136,8 +136,9 @@ async function initData() {
   videoList.value.length = 0
   appVideoList.value.length = 0
   await getData()
-  console.warn(appVideoList.value)
-  appVideoList.value.forEach((video) => {
+  console.warn('sxs await getData() videoList')
+  console.warn(videoList)
+  videoList.value.forEach((video) => {
     console.warn('sxs item')
     console.warn(video)
   })
