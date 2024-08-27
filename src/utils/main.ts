@@ -156,7 +156,7 @@ export function isHomePage(): boolean {
     || /https?:\/\/(?:www\.)?bilibili.com\/index\.html$/.test(location.href)
     || /https?:\/\/(?:www\.)?bilibili.com\/\?spm_id_from=.*/.test(location.href)
   ) {
-    //console.warn('sxs isHomePage')
+    // console.warn('sxs isHomePage')
     return true
   }
   return false
