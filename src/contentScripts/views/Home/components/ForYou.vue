@@ -136,6 +136,12 @@ async function initData() {
   videoList.value.length = 0
   appVideoList.value.length = 0
   await getData()
+  console.warn('sxs getData finally')
+  console.warn(appVideoList)
+  appVideoList.value.forEach((video) => {
+    console.warn('sxs item')
+    console.warn(video)
+  })
 }
 
 async function getData() {
@@ -154,12 +160,6 @@ async function getData() {
   finally {
     isLoading.value = false
     emit('afterLoading')
-    console.warn('sxs getData finally')
-    console.warn(appVideoList)
-    appVideoList.value.forEach((video) => {
-      console.warn('sxs item')
-      console.warn(video)
-    })
   }
 }
 
