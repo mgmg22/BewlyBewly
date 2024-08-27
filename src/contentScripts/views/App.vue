@@ -38,6 +38,7 @@ watch(
   () => activatedPage.value,
   () => {
     const osInstance = scrollbarRef.value.osInstance()
+    console.warn('sxs const osInstance = scrollbarRef.value.osInstance()')
     osInstance.elements().viewport.scrollTop = 0
   },
 )
@@ -45,6 +46,7 @@ watch(
 watch(
   () => settings.value.themeColor,
   () => {
+    console.warn('sxs setAppThemeColor')
     setAppThemeColor()
   },
   { immediate: true },

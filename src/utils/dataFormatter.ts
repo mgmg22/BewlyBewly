@@ -41,6 +41,7 @@ export function numFormatter(num: number) {
 }
 
 export function calcTimeSince(date: number | string | Date) {
+  console.warn('sxs calcTimeSince')
   const seconds = Math.floor(((Number(new Date())) - Number(date)) / 1000)
   let interval = seconds / 31536000
   if (interval > 1)
