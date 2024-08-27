@@ -136,8 +136,7 @@ async function initData() {
   videoList.value.length = 0
   appVideoList.value.length = 0
   await getData()
-  console.warn('sxs getData finally')
-  console.warn(appVideoList)
+  console.warn(appVideoList.value)
   appVideoList.value.forEach((video) => {
     console.warn('sxs item')
     console.warn(video)
@@ -151,15 +150,18 @@ async function getData() {
   try {
     if (settings.value.recommendationMode === 'web') {
       await getRecommendVideos()
+      console.warn('sxs getRecommendVideos')
     }
     else {
       for (let i = 0; i < 3; i++)
         await getAppRecommendVideos()
+        console.warn('sxs getAppRecommendVideos')
     }
   }
   finally {
     isLoading.value = false
     emit('afterLoading')
+    console.warn('sxs getData finally')
   }
 }
 
