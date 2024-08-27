@@ -156,7 +156,7 @@ async function getData() {
     else {
       for (let i = 0; i < 3; i++)
         await getAppRecommendVideos()
-        console.warn('sxs getAppRecommendVideos')
+      console.warn('sxs getAppRecommendVideos')
     }
   }
   finally {
