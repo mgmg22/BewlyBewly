@@ -156,7 +156,7 @@ async function getData() {
     emit('afterLoading')
     console.warn('sxs getData finally')
     console.warn(appVideoList)
-    appVideoList.forEach((video) => {
+    appVideoList.value.forEach((video) => {
       console.warn('sxs item')
       console.warn(video)
     })
